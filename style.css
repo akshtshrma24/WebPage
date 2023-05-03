@@ -1,0 +1,275 @@
+:root {
+    --background-color: #000;
+}
+
+* {
+    font-family: monospace;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+* {
+    scrollbar-width: none;
+    scrollbar-color: #464347 transparent;
+}
+
+  /* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #464347;
+    border-radius: 7px;
+    border: 0px none transparent;
+}
+
+body {
+    background-color: var(--background-color);
+    color:aliceblue;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+header {
+    padding: 0%;
+    background-image: url("images/homepagePic/rollingWaves.jpg");
+    background-position-y: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+#homepage::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15vh;
+    background: linear-gradient(to top, black, transparent);
+}
+
+main {
+    width: 80%;
+    padding: 0 10%;
+}
+
+#homepage {
+    height: 100vh;
+}
+
+.main-nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    padding: 1rem 0;
+    align-items: center;
+    align-self: center;
+}
+
+.main-nav a{
+    counter-increment: nav-links;
+    --order: nav-links;
+    flex: 1;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 2rem;
+    text-align: center;
+    animation: dropIn 1s ease forwards;
+    animation-delay: calc(var(--order) * nav-links);
+}
+@keyframes dropIn {
+    from {transform: translateY(-500px);}
+    to {transform: translateY(0);}
+}
+
+a::before {
+    --order: nav-links;
+}
+
+.link{
+    width: 50%;
+    height: auto;
+    transition: all 0.5s ease-out;
+}
+
+.link:hover{
+    cursor: pointer;
+    font-size: xx-large;
+    margin-top: -1rem;
+}
+
+.center-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.intro-wrapper{
+    padding-top: 6rem;
+}
+
+.intro {
+    margin: 0;
+}
+
+.nav-section-title {
+    margin-left: auto;
+    font-size: xxx-large;
+    margin: 2.42vw;
+}
+
+.project-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 0 1vw;
+}
+
+.project-container a {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 0 1vw;
+    color: white;
+}
+  
+.flipper-card {
+    height: 17vw;
+    width: 17vw;
+    margin: 1.21vw;
+    position: relative;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flipper-card:hover {
+    cursor: pointer;
+}
+  
+.flipper-front, .flipper-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    background: #cccccc;
+    display: flex;
+}
+  
+.flipper-front img {
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.flipper-front {
+    overflow: hidden;
+}
+  
+.flipper-back {
+    display:flex;
+    flex-direction: column;
+    background: #323639;
+    box-sizing: border-box;
+    padding: 10%;
+    font-size: x-large;
+    word-wrap: anywhere;
+    overflow-y: auto;
+    transform: rotateY(180deg);
+}
+
+.flipper-back a {
+    color: white;
+    cursor: help;
+}
+  
+.flipper-card.flipper-is-flipped {
+    transform: rotateY(180deg);
+}
+
+.projects-container  ul {padding: 0;}
+
+.projects-container  li {
+    display: inline;
+}
+
+.tag-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.tag {
+    border: #ccc 5px;
+    padding: 0.25em;
+    margin: 0.25em;
+    border-radius: 1em;
+}
+
+.lang {
+    background-color: midnightblue;
+}
+
+.lib {
+    background-color: darkgreen;
+}
+
+.api {
+    background-color: brown;
+}
+
+.misc {
+    background-color: pink;
+}
+
+div.projects-container > div > ul > li > a {
+    text-decoration: none;
+}
+
+.test::before {
+    counter-increment: test;
+    content: counter(test);
+}
+
+.pdf-viewer {
+    height: 100em;
+    width: 100%;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+#social-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 10rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0%;
+}
+
+.socials-container {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-basis: 30%;
+}
+
+#recurse {
+    box-sizing: border-box;
+    width: 95vw;
+    height: 100vh;
+    padding: 10px;
+}
